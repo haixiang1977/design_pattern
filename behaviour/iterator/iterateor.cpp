@@ -11,6 +11,7 @@
 /* How to define the begin() member function of the container */
 /* How to define the end() member function of the container */
 /* How to define these operators '==' '!=' for iterators */
+/* How to use friend class to access class private member */
 
 /* example: https://sourcemaking.com/design_patterns/iterator/cpp/1 */
 /* http://blog.csdn.net/lovelion/article/details/9992243 */
