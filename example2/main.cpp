@@ -9,6 +9,7 @@
 
 #include <unistd.h>
 #include <iostream>
+#include "configuration.h"
 #include "opcclient.h"
 #include "opcclient_factory.h"
 
@@ -18,6 +19,11 @@ int main(int argc, char *argv[])
     OpcClient* client = NULL;
 
     std::cout << "Opc Client Hello world" << std::endl;
+
+    // parse configuration file
+    ret = OpcConfiguration::get_instance()->parse();
+    if (ret != 0) return -1;
+
     client = OpcClientFactory::get_opc_client(OpcClientFactory::SOFTING);
     if (client == NULL) return -1;
 
