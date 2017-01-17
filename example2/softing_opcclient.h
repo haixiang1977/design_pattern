@@ -10,6 +10,17 @@
 
 #include "opcclient.h"
 
+#include "Toolbox.h"
+#include "Application.h"
+#include "ClientSession.h"
+#include "Constants.h"
+#include "UserIdentityToken.h"
+
+#include "ClientSubscription.h"
+#include "ClientMonitoredItem.h"
+
+using namespace SoftingOPCToolbox5;
+
 class SoftingOpcClient : public OpcClient {
 public:
 	SoftingOpcClient() {};
@@ -23,7 +34,11 @@ public:
 	int unsubscribe();
 	int monitor();
 private:
-	// FIX ME !!!
+	void initApplicationDescription(ApplicationDescription&);
+	ApplicationPtr m_app;
+	Client::SessionPtr m_session;
+	SoftingOPCToolbox5::Client::SubscriptionPtr m_subscription; // one subscription for one or multiple items
+	SoftingOPCToolbox5::Client::MonitoredItemPtr m_monitoritem; // one moinitor item for one node, later to be vector
 };
 
 #endif /* SOFTING_OPCCLIENT_H_ */

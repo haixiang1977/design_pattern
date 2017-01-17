@@ -6,8 +6,8 @@
  */
 
 #include <iostream>
-#include <opcclient_factory.h>
-#include <softing_opcclient.h>
+#include "opcclient_factory.h"
+#include "softing_opcclient.h"
 
 OpcClient* OpcClientFactory::get_opc_client(OPC_CLIENT_VENDOR vendor)
 {

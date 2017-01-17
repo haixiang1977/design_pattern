@@ -8,6 +8,11 @@
 #include <iostream>
 #include "softing_opcclient.h"
 
+void SoftingOpcClient::initApplicationDescription(ApplicationDescription& appDesc)
+{
+	return;
+}
+
 int SoftingOpcClient::open()
 {
 	int ret = 0;
@@ -15,7 +20,6 @@ int SoftingOpcClient::open()
 
 	return ret;
 }
-
 
 int SoftingOpcClient::close()
 {
